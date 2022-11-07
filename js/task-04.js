@@ -1,19 +1,20 @@
+//Варіант №1
 //const refs = {
-   // step: document.querySelector('.step'),
-   // value: document.querySelector('#value'),
-    //decrement: document.querySelector('.decrement'),
-    //increment: document.querySelector('.increment'),
+    //step: document.querySelector('.step'),
+    //value: document.querySelector('#value'),
+    //decrement: document.querySelector('[data-action="decrement"]'),
+    //increment: document.querySelector('[data-action="increment"]')
 //};
 
 //let counterValue = 0;
 //let step = 1;
 
 //const render = () => {
-   // refs.value.textContent = counterValue;
+    //refs.value.textContent = counterValue;
 //};
 
 //const handleDecrement = () => {
-   // counterValue -= step;
+   //counterValue -= step;
     //render ();
 //};
 
@@ -23,7 +24,7 @@
 //};
 
 //const handleStepChange = (Event) => {
-   // step = Number(Event.target.value);
+    //step = Number(Event.target.value);
 //};
 
 //render ();
@@ -31,6 +32,9 @@
 //refs.decrement.addEventListener('click' , handleDecrement);
 //refs.increment.addEventListener('click' , handleIncrement);
 //refs.step.addEventListener('change' , handleStepChange);
+
+
+//Варіант №2
 const refs = {
      countDecrement: document.querySelector('[data-action="decrement"]'),
      countIncrement: document.querySelector('[data-action="increment"]'),
@@ -43,6 +47,5 @@ const refs = {
     refs.countValue.textContent = counterValue -= 1;
  }
  function onIncrement() {
-    refs.countValue.value = counterValue += 1;
-    refs.countValue.textContent = refs.countValue.value;
+    refs.countValue.textContent = counterValue += 1;
  }

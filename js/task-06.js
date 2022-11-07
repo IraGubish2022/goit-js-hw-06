@@ -1,13 +1,19 @@
 const inputElm = document.querySelector("#validation-input");
-inputElm.addEventListener("blur", onBlur);
+const validationInputEl = Number(inputElm.getAttribute(`data-length`));
+
+console.log(validationInputEl);
+
+inputElm.addEventListener('blur', onBlur);
+
+function addRemoveColor(remove, add) {
+  inputElm.classList.remove(remove);
+  inputElm.classList.add(add);
+}
+
 function onBlur(event) {
-  const input = event.currentTarget;
-  const inputLength = Number(input.dataset.length);
-  if (input.value.length === inputLength) {
-    input.classList.remove("invalid");
-    input.classList.add("valid");
+  if (event.currentTarget.value.length === validationInputEl) {
+    addRemoveColor('invalid', 'valid');
   } else {
-    input.classList.remove("valid");
-    input.classList.add("invalid");
+    addRemoveColor('valid', 'invalid');
   }
-};
+}
